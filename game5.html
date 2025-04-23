@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Тест: Красная книга ВКО</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://images.wallpaperscraft.ru/image/single/gory_ozero_trava_137616_1280x720.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.1);
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #000a0d;
+      margin-bottom: 30px;
+    }
+
+    .question-card {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+      padding: 20px 25px;
+      transition: 0.3s;
+    }
+
+    .question-card:hover {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .question-card h3 {
+      margin-top: 0;
+      color: #34495e;
+    }
+
+    .answers label {
+      display: block;
+      padding: 6px 0;
+    }
+
+    button {
+      background-color: #2b6777;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3e8e9d;
+    }
+
+    .top-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    #result {
+      margin-top: 30px;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1f5c57;
+      text-align: center;
+      background: #ecf9f9;
+      border-radius: 10px;
+      border: 1px solid #cce7e7;
+    }
+
+    @media (max-width: 600px) {
+      .question-card {
+        padding: 15px;
+      }
+      button {
+        width: 100%;
+      }
+      .top-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <div class="top-buttons">
+        <button onclick="location.href='proba.html'">На главную</button>
+        <button onclick="checkAnswers()">Проверить ответы</button>
+      </div>
+
+      <h1>Проверьте свои знания по Красной книге ВКО</h1>
+      <form id="quizForm">
+        <!-- 10 карточек вопросов -->
+        <div class="question-card">
+          <h3>1. Какой зверь, занесённый в Красную книгу, обитает в горах ВКО?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q1" value="A" /> A) Снежный барс</label>
+            <label><input type="radio" name="q1" value="B" /> B) Крот</label>
+            <label><input type="radio" name="q1" value="C" /> C) Волк</label>
+            <label><input type="radio" name="q1" value="D" /> D) Косуля</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>2. Какой редкий вид птиц гнездится в болотах ВКО?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q2" value="D" /> D) Большая выпь</label>
+            <label><input type="radio" name="q2" value="A" /> A) Ворона</label>
+            <label><input type="radio" name="q2" value="B" /> B) Жаворонок</label>
+            <label><input type="radio" name="q2" value="C" /> C) Аист белый</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>3. Что угрожает популяции баргузинского оленя в ВКО?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q3" value="B" /> B) Браконьерство</label>
+            <label><input type="radio" name="q3" value="A" /> A) Суровая зима</label>
+            <label><input type="radio" name="q3" value="C" /> C) Миграция</label>
+            <label><input type="radio" name="q3" value="D" /> D) Избыток пищи</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>4. Какой редкий кустарник произрастает в ВКО и занесён в Красную книгу?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q4" value="C" /> C) Жимолость алтайская</label>
+            <label><input type="radio" name="q4" value="A" /> A) Смородина чёрная</label>
+            <label><input type="radio" name="q4" value="B" /> B) Калина</label>
+            <label><input type="radio" name="q4" value="D" /> D) Шиповник</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>5. Сколько видов животных из ВКО занесены в Красную книгу?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q5" value="A" /> A) Более 50</label>
+            <label><input type="radio" name="q5" value="B" /> B) Менее 10</label>
+            <label><input type="radio" name="q5" value="C" /> C) Около 100</label>
+            <label><input type="radio" name="q5" value="D" /> D) Только 3</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>6. Почему исчезает сапсан в Восточном Казахстане?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q6" value="C" /> C) Уничтожение мест обитания</label>
+            <label><input type="radio" name="q6" value="A" /> A) Он слишком крупный</label>
+            <label><input type="radio" name="q6" value="B" /> B) Его не любят</label>
+            <label><input type="radio" name="q6" value="D" /> D) Он не умеет летать</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>7. Как называется редкая рыба, встречающаяся в озере Маркаколь?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q7" value="D" /> D) Ускуч</label>
+            <label><input type="radio" name="q7" value="A" /> A) Судак</label>
+            <label><input type="radio" name="q7" value="B" /> B) Щука</label>
+            <label><input type="radio" name="q7" value="C" /> C) Форель</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>8. Какой метод помогает сохранить редкие виды?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q8" value="A" /> A) Создание заповедников</label>
+            <label><input type="radio" name="q8" value="B" /> B) Вырубка лесов</label>
+            <label><input type="radio" name="q8" value="C" /> C) Строительство заводов</label>
+            <label><input type="radio" name="q8" value="D" /> D) Массовая охота</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>9. Какое из этих растений – эндемик Восточного Казахстана?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q9" value="C" /> C) Лук алтайский</label>
+            <label><input type="radio" name="q9" value="A" /> A) Клевер</label>
+            <label><input type="radio" name="q9" value="B" /> B) Крапива</label>
+            <label><input type="radio" name="q9" value="D" /> D) Полынь</label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3>10. Как можно участвовать в охране природы?</h3>
+          <div class="answers">
+            <label><input type="radio" name="q10" value="B" /> B) Участвовать в эко-акциях</label>
+            <label><input type="radio" name="q10" value="A" /> A) Игнорировать проблемы</label>
+            <label><input type="radio" name="q10" value="C" /> C) Ловить редких животных</label>
+            <label><input type="radio" name="q10" value="D" /> D) Выбрасывать мусор в лесу</label>
+          </div>
+        </div>
+      </form>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const correctAnswers = {
+        q1: 'A',
+        q2: 'D',
+        q3: 'B',
+        q4: 'C',
+        q5: 'A',
+        q6: 'C',
+        q7: 'D',
+        q8: 'A',
+        q9: 'C',
+        q10: 'B'
+      };
+
+      let score = 0;
+
+      for (let q in correctAnswers) {
+        const userAnswer = document.querySelector(`input[name="${q}"]:checked`);
+        if (userAnswer && userAnswer.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      const result = document.getElementById('result');
+      result.textContent = `Ваш результат: ${score} из 10`;
+    }
+  </script>
+</body>
+</html>
+

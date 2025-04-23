@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Млекопитающие ВКО</title>
+  <style>
+    body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://images.wallpaperscraft.ru/image/single/gory_ozero_trava_137616_1280x720.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+    .header {
+      background-color: rgba(0, 100, 0, 0.9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    .animal-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .animal {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 180px;
+    }
+    .animal:hover {
+      transform: scale(1.05);
+    }
+    .animal img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      width: 50%;
+      margin: 10% auto;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    .close {
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .footer {
+      background-color: rgba(0, 100, 0, 0.9);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .back-btn {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">Млекопитающие Красной книги Казахстана, обитающие в Восточно-Казахстанской области<br></div>
+
+<div class="container">
+  <a href="proba.html" class="back-btn">Вернуться на главную</a>
+  <div class="animal-list">
+    <div class="animal" onclick="openModal('nochnica-ikonnikova')">
+      <img src="https://redbook28.ru/wp-content/uploads/2021/10/nochnica-ikonnikova.jpg" alt="Ночница иконникова">
+      <p><b>Ночница иконникова</b></p>
+    </div>
+	<div class="animal" onclick="openModal('selevinia')">
+      <img src="https://ic.pics.livejournal.com/jewsejka/7887626/138443/138443_original.jpg" alt="Селевиния">
+      <p><b>Селевиния</b></p>
+    </div>
+	<div class="animal" onclick="openModal('tushkanchik')">
+      <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/772193/large.jpg" alt="Жирнохвостый карликовый тушканчик">
+      <p><b>Жирнохвостый карликовый тушканчик</b></p>
+    </div>
+	<div class="animal" onclick="openModal('homiak robrovskogo')">
+      <img src="https://santreyd.ru/upload/staff/upload/staff/vplate/all_photos/6184fbdafd084beadccf15fdd0b1be56d015d504.jpg" alt="Хомячок роборовского">
+      <p><b>Хомячок роборовского</b></p>
+    </div><div class="animal" onclick="openModal('pestrushka')">
+      <img src="https://aviales.kz/uploads/posts/2020-04/1586348232_vlka212040082m.jpg" alt="Желтая пеструшка">
+      <p><b>Желтая пеструшка</b></p>
+    </div>
+	<div class="animal" onclick="openModal('red-volk')">
+      <img src="https://wildticketasia.com/uploads/posts/2021-08/1629516529_krasnyy-volk-red-wolf-1.jpg" alt="Красный волк">
+      <p><b>Красный волк</b></p>
+    </div>
+	<div class="animal" onclick="openModal('kunica')">
+      <img src="https://ps-crimea.com/wp-content/uploads/2018/08/martes_foina_1.jpg" alt="Каменная куница">
+      <p><b>Каменная куница</b></p>
+    </div>
+	<div class="animal" onclick="openModal('pereviazka')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Marbled_polecat.jpg" alt="Перевязка">
+      <p><b>Перевязка</b></p>
+    </div>
+	<div class="animal" onclick="openModal('manul')">
+      <img src="https://festivalnauki.ru/upload/iblock/d25/tbdht7vzd6xahb0f1um8egjpauay08qm/viktor_vasicsek_dE0jpWosnio_unsplash.jpg" alt="Манул">
+      <p><b>Манул</b></p>
+    </div>
+	<div class="animal" onclick="openModal('rys')">
+      <img src="https://www.ktk.kz/getimage/mainpagebig/133645" alt="Центральноазиатская или Туркестанская рысь">
+      <p><b>Центральноазиатская или Туркестанская рысь</b></p>
+    </div>
+	<div class="animal" onclick="openModal('bars')">
+      <img src="https://rpn.gov.ru/upload/resize_cache/iblock/7d2/49cj64ep64s3uz49i176rnyhyjf0pgt8/1920_1920_0/_Snezhnyy-bars.png" alt="Снежный барс">
+      <p><b>Снежный барс</b></p>
+    </div>
+	<div class="animal" onclick="openModal('baran')">
+      <img src="https://etosibir.ru/wp-content/uploads/2022/01/Muflon-1-710x474.jpg" alt="Алтайский горный баран">
+      <p><b>Алтайский горный баран</b></p>
+    </div>
+	<div class="animal" onclick="openModal('djeiran')">
+      <img src="https://aviales.kz/uploads/posts/2018-12/1545709138_c8dfa25856eede94376d5d8be69b16bb.jpg" alt="Джейран">
+      <p><b>Джейран</b></p>
+    </div>
+	<div class="animal" onclick="openModal('kaz-baran')">
+      <img src="https://lh5.googleusercontent.com/proxy/K-GzrzzHCbHF9_s3JigPZFik4JDzwiYj8rBz7JbTFo3rXvqCU9HaqipkzlwxmEaDP1bVKO5QqeQIM4Kmz-1gCoKvpdDWQ_rq8RlL3C4" alt="Казахстанский горный баран">
+      <p><b>Казахстанский горный баран</b></p>
+    </div>
+	<div class="animal" onclick="openModal('irbis')">
+      <img src="https://livingasia.online/wp-content/uploads/2017/08/%D0%B8%D1%80%D0%B1%D0%B8%D1%81-2.jpg" alt="Ирбис">
+      <p><b>Ирбис</b></p>
+    </div>
+	<div class="animal" onclick="openModal('prosto-rys')">
+      <img src="https://farm4.static.flickr.com/3525/5846259814_acc2c0c146_b.jpg" alt="Обыкновенная рысь">
+      <p><b>Обыкновенная рысь</b></p>
+    </div>
+	<div class="animal" onclick="openModal('kolonok')">
+      <img src="https://huntland.ru/wp-content/uploads/2019/04/kolonok-2.jpg" alt="Колонок">
+      <p><b>Колонок</b></p>
+    </div>
+	<div class="animal" onclick="openModal('solongoi')">
+      <img src="https://redbook.su/wp-content/uploads/2020/02/001.jpg" alt="Солонгой">
+      <p><b>Солонгой</b></p>
+    </div>
+	<div class="animal" onclick="openModal('ular')">
+      <img src="https://hidalgo-altai.ru/upload/medialibrary/7c1/7c19271ad973c49feeef41f608c02544.jpg" alt="Алтайский марал">
+      <p><b>Алтайский марал</b></p>
+    </div>
+	<div class="animal" onclick="openModal('kaban')">
+      <img src="https://museum-taldom.mo.muzkult.ru/media/2020/08/12/1256486851/kaban-priroda-fon-6428.jpg" alt="Кабан">
+      <p><b>Кабан</b></p>
+    </div>
+	<div class="animal" onclick="openModal('los')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Bull_Moose.jpg" alt="Лось">
+      <p><b>Лось</b></p>
+    </div>
+	<script>
+    function openModal(id) {
+        let info = {
+            "nochnica-ikonnikova": "Маленькая летучая мышь с серовато-коричневым мехом.Место обитания: горные леса и пещеры Восточного Казахстана.Численность: низкая, малонаселённый вид.Интересный факт: может зимовать в трещинах скал, даже при минусовой температуре.",
+			"selevinia": "Редчайший грызун, напоминающий землеройку.Место обитания: сухие степи и полупустыни.Численность: крайне мала.Интересный факт: вид считается живым ископаемым, обнаружен только в Казахстане.",
+			"tushkanchik": "Миниатюрный грызун с толстым хвостиком для запаса жира.Место обитания: песчаные и глинистые участки.Численность: ограничена.Интересный факт: может не пить воду, получая её из пищи.",
+			"homiak robrovskogo": "Крошечный, быстро двигающийся хомячок.Место обитания: каменистые степи.Численность: редкий вид.Интересный факт: самый маленький хомяк в мире.",
+			"pestrushka": "Ярко окрашенный грызун, активный днём.Место обитания: горные и предгорные районы.Численность: снижается.Интересный факт: выстраивает сложные системы нор.",
+			"red-volk": "Редкий хищник с рыжеватой шерстью.Место обитания: горные леса.Численность: крайне низкая.Интересный факт: охотится стаями, как волки.",
+			"kunica": "Грациозный хищник с пятнистой грудью.Место обитания: скалистые леса.Численность: уменьшается.Интересный факт: легко лазает по деревьям и крышам.",
+			"pereviazka": "Хищный зверёк с характерным чёрно-белым рисунком.Место обитания: степи, лесостепи.Численность: редкий.Интересный факт: издаёт резкий запах для защиты.",
+			"manul": "Пушистый дикий кот с плоской мордой.Место обитания: сухие степи и горные районы.Численность: редкий.Интересный факт: кажется толстым из-за густой шерсти.",
+			"rys": "Подвид рыси, обитающий в Центральной Азии.Место обитания: леса и скалистые участки.Численность: низкая.Интересный факт: отлично приспособлена к жизни в горах.",
+			"bars": "Редкий и скрытный хищник с пятнистой шерстью.Место обитания: высокогорья.Численность: критически низкая.Интересный факт: символ природы Казахстана.",
+			"baran": "Массивное животное с загнутыми рогами.Место обитания: скалистые горные участки.Численность: нестабильна.Интересный факт: может прыгать на высоту до 2 метров.",
+			"djeiran": "Лёгкая и быстрая антилопа.Место обитания: полупустыни и степи.Численность: восстанавливается благодаря охране.Интересный факт: может достигать скорости до 65 км/ч.",
+			"kaz-baran": "Крупный баран с массивными рогами.Место обитания: горы и предгорья.Численность: под охраной.Интересный факт: архар — прародитель домашних овец.",
+			"irbis": "Редкий и скрытный хищник с пятнистой шерстью.Место обитания: высокогорья.Численность: критически низкая.Интересный факт: символ природы Казахстана.",
+			"prosto-rys": "Крупная кошка с кисточками на ушах.Место обитания: хвойные и лиственные леса.Численность: сокращается.Интересный факт: охотится в основном ночью.",
+			"kolonok": "Маленький хищник с рыжеватой шерстью.Место обитания: леса, кустарники.Численность: редкий.Интересный факт: отличается высокой активностью зимой.",
+			"solongoi": "Хищное млекопитающее из семейства куньих.Место обитания: горные склоны, степи.Численность: незначительная.Интересный факт: очень скрытный и редкий в природе.",
+			"ular": "Подвид благородного оленя.Место обитания: леса и горы Алтая.Численность: под контролем.Интересный факт: ценится за панты — молодые рога.",
+			"kaban": "Крупное дикое животное.Место обитания: леса и заросли по берегам рек.Численность: стабильная, но требует наблюдения.Интересный факт: способен защищать своё потомство от хищников.",
+			"los": "Самое крупное животное Казахстана.Место обитания: пойменные леса и болота.Численность: местами редок.Интересный факт: его рога могут достигать 1,5 м в ширину.",
+            };
+        document.getElementById("modal-title").innerText = id.replace("-", " ");
+        document.getElementById("modal-info").innerText = info[id];
+        document.getElementById("modal-container").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("modal-container").style.display = "none";
+    }
+</script>
+<div id="modal-container" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-info"></p>
+  </div>
+</div>
+	<div class="footer">
+    <p>Автор: ученица "8Б"класса "Средней школы №17 имени М. Ауэзова"  Гурина Дарья</p>
+    <p>Руководитель: Учитель физики и информатики "Средней школы №17 имени М. Ауэзова"  Октябрь Акиык</p>
+	 <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
+      Сайт создан в рамках проектной работы <em>«Электронная Красная книга Восточного Казахстана»</em>.<br>
+Информация, представленная на сайте, основана на издании: Красная книга Республики Казахстан. Издание 4-е, 
+переработанное и дополненное. Том I: Животные; часть 1: Позвоночные / Коллектив авторов — Алматы: «DPS», 2010. — 324 с. ISBN 9965-32-738-6.<br>
+Если у вас есть предложения, замечания или вы не согласны с определённой информацией на сайте — пожалуйста, свяжитесь с нами по электронной почте или телефону, указанному ниже:
+    </p>
+    <div style="margin-top: 20px;">
+      <a href="mailto:oktyabrkyzy@gmail.com" style="display: inline-flex; align-items: center; 
+         text-decoration: none; color: #333; margin-right: 15px; font-size: 16px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbMHaGbdFSQcBFdPQwWWe6dBG7i-wFIYJQ2w&s"
+             alt="Email icon" style="width:24px; height:24px; margin-right: 8px;">
+        oktyabrkyzy@gmail.com
+      </a>
+	<a href="https://web.whatsapp.com/send?phone=87717052125" style="display: inline-flex; align-items: center;
+         text-decoration: none; color: #333; font-size: 16px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHq-vaUK8MlOy8sPlCE5cHlSF9w7jUJ6YDQ&s" 
+             alt="WhatsApp icon" style="width:24px; height:24px; margin-right: 8px;">
+        87711052125
+      </a>
+    </div>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проверьте свои знания по Красной книге ВКО</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-image: url('https://images.wallpaperscraft.ru/image/single/gory_ozero_trava_137616_1280x720.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #2b593e;
+    }
+    .question {
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    .question.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .btn {
+      background-color: #2b593e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #3d7b57;
+    }
+    .btn-main {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .result {
+      font-weight: bold;
+      color: #2b593e;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Проверьте свои знания по Красной книге ВКО</h1>
+    <form id="quizForm">
+      <div class="question active">
+        <h3>1. Что означает включение вида в Красную книгу?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q1" value="A"> A) Вид подлежит охране</label>
+          <label><input type="radio" name="q1" value="B"> B) Вид считается вредным</label>
+          <label><input type="radio" name="q1" value="C"> C) Вид можно истреблять</label>
+          <label><input type="radio" name="q1" value="D"> D) Вид является домашним</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>2. Какой вид птиц из Красной книги обитает в ВКО?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q2" value="A"> A) Черный аист</label>
+          <label><input type="radio" name="q2" value="B"> B) Воробей</label>
+          <label><input type="radio" name="q2" value="C"> C) Сизый голубь</label>
+          <label><input type="radio" name="q2" value="D"> D) Кукушка</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>3. Какую категорию имеет исчезающий вид?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q3" value="C"> C) I категория</label>
+          <label><input type="radio" name="q3" value="A"> A) III категория</label>
+          <label><input type="radio" name="q3" value="B"> B) IV категория</label>
+          <label><input type="radio" name="q3" value="D"> D) V категория</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>4. Что грозит за уничтожение животных из Красной книги?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q4" value="A"> A) Административная и уголовная ответственность</label>
+          <label><input type="radio" name="q4" value="B"> B) Похвала</label>
+          <label><input type="radio" name="q4" value="C"> C) Подарок</label>
+          <label><input type="radio" name="q4" value="D"> D) Никаких последствий</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>5. Где можно найти снежного барса в ВКО?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q5" value="B"> B) В горах Южного Алтая</label>
+          <label><input type="radio" name="q5" value="A"> A) В степях</label>
+          <label><input type="radio" name="q5" value="C"> C) В озере Зайсан</label>
+          <label><input type="radio" name="q5" value="D"> D) В пустыне</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>6. Как называется редкое дерево, занесенное в Красную книгу Казахстана?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q6" value="C"> C) Семеновская ель</label>
+          <label><input type="radio" name="q6" value="A"> A) Тополь черный</label>
+          <label><input type="radio" name="q6" value="B"> B) Акация белая</label>
+          <label><input type="radio" name="q6" value="D"> D) Клен</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>7. Какая из этих рыб занесена в Красную книгу?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q7" value="A"> A) Осетр</label>
+          <label><input type="radio" name="q7" value="B"> B) Карась</label>
+          <label><input type="radio" name="q7" value="C"> C) Сом</label>
+          <label><input type="radio" name="q7" value="D"> D) Окунь</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>8. Кто составляет Красную книгу Казахстана?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q8" value="D"> D) Учёные и специалисты в области биологии</label>
+          <label><input type="radio" name="q8" value="A"> A) Политики</label>
+          <label><input type="radio" name="q8" value="B"> B) Актёры</label>
+          <label><input type="radio" name="q8" value="C"> C) Журналисты</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>9. Сколько категорий редкости существует в Красной книге?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q9" value="A"> A) Пять</label>
+          <label><input type="radio" name="q9" value="B"> B) Три</label>
+          <label><input type="radio" name="q9" value="C"> C) Две</label>
+          <label><input type="radio" name="q9" value="D"> D) Шесть</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>10. Как можно помочь сохранить редкие виды?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q10" value="C"> C) Не нарушать природоохранные законы</label>
+          <label><input type="radio" name="q10" value="A"> A) Охотиться на них</label>
+          <label><input type="radio" name="q10" value="B"> B) Ловить и держать дома</label>
+          <label><input type="radio" name="q10" value="D"> D) Вырубать леса</label>
+        </div>
+      </div>
+
+      <div class="btn-main">
+        <button type="button" class="btn" id="nextBtn">Следующий</button>
+      </div>
+    </form>
+    <div class="result" id="result"></div>
+    <div class="btn-main">
+      <a href="proba.html" class="btn">На главную</a>
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    let currentQuestion = 0;
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (currentQuestion < questions.length - 1) {
+        questions[currentQuestion].classList.remove('active');
+        currentQuestion++;
+        questions[currentQuestion].classList.add('active');
+        if (currentQuestion === questions.length - 1) {
+          document.getElementById('nextBtn').textContent = 'Завершить';
+        }
+      } else {
+        submitQuiz();
+      }
+    });
+
+    function submitQuiz() {
+      const answers = {
+        q1: 'A',
+        q2: 'A',
+        q3: 'C',
+        q4: 'A',
+        q5: 'B',
+        q6: 'C',
+        q7: 'A',
+        q8: 'D',
+        q9: 'A',
+        q10: 'C'
+      };
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById('quizForm').style.display = 'none';
+      document.getElementById('result').textContent = `Вы набрали ${score} из ${total} баллов.`;
+    }
+  </script>
+</body>
+</html>

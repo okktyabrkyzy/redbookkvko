@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редкие рыбы Восточного Казахстана</title>
+    <style>
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://images.wallpaperscraft.ru/image/single/gory_ozero_trava_137616_1280x720.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: rgba(0, 100, 0, 0.85);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2); /* почти прозрачный */
+  backdrop-filter: blur(6px); /* эффект стекла */
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.animal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.animal {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 180px;
+}
+
+.animal:hover {
+  transform: scale(1.05);
+}
+
+.animal img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  width: 50%;
+  margin: 10% auto;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: rgba(0, 100, 0, 0.85);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.back-btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="header">Круглоротые и рыбы Красной книги Казахстана, обитающие в Восточно-Казахстанской области</div>
+
+<div class="container">
+    <a href="proba.html" class="back-btn">Вернуться на главную</a>
+    <div class="animal-list">
+        <div class="animal" onclick="openModal('siberian-sturgeon')">
+            <img src="https://open.kg/uploads/posts/2019-11/1573654441_screenshot_25.png" alt="СИБИРСКИЙ ОСЁТР">
+            <p><b>СИБИРСКИЙ ОСЁТР</b></p>
+        </div>
+        <div class="animal" onclick="openModal('taimen')">
+            <img src="https://udm.travel/upload/iblock/a81/Taymen.jpg" alt="ТАЙМЕНЬ">
+            <p><b>ТАЙМЕНЬ</b></p>
+        </div>
+        <div class="animal" onclick="openModal('nelma')">
+            <img src="https://nordural.ru/images/article/2013/1366369891.jpg" alt="НЕЛЬМА">
+            <p><b>НЕЛЬМА</b></p>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div id="modal-container" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-location"></p>
+        <p id="modal-population"></p>
+        <p id="modal-threat"></p>
+        <p id="modal-protection"></p>
+        <p id="modal-fact"></p>
+    </div>
+</div>
+<script>
+    function openModal(id) {
+        const info = {
+            "siberian-sturgeon": {
+                title: "Сибирский осётр-Acipenser baerii",
+                location: "Распространение: Населяет реки Сибири от Оби до Колымы. В Казахстане – только в бассейне р. Иртыш, где встречался на всём протяжении реки от границы с Россией до границы с КНР, включая оз. Зайсан и р. чёрный Иртыш. После строитель- ства каскада ГЭС в Верхнем Иртыше обитает в реке ниже г. Семей.Преимущественно крупные рав- нинные реки. Встречается в озёрах и водохрани- лищах.",
+                population: "Численность: В бассейне Иртыша в 1936-1939 гг. вылавливалось 400-500 т осетра. В то же время на оз. Зайсан он утратил промысловое значение ещё в 1940-х годах при среднем вылове 0,7 т в год [4]. В настоящее время стал малочислен. В Бухтарминском водохранилище практически исчез",
+                threat: "Основные лимитирующие факторы: Перекрытие миграционных путей плотинами ГЭС. Браконьерский вылов неполовозрелых особей самоловной крючковой снастью.",
+                protection: "Принятые меры охраны: Вылов запрещён Правилами рыболовства. Постановлением правительства РК от 21.06.2007 г. № 521 включен в Перечень объектов охраны окружающей среды.",
+                fact: "Статус. II категория. Вид, численность которого резко сократилась и продолжает уменьшаться в Казахстане."
+            },
+            "taimen": {
+                title: "Таймень-Hucho taimen",
+                location: "Распространение. Населяет водоёмы севера от верховьев Волги и Печоры на западе до бассейна Амура на востоке. В Казахстане – только в бас- сейне Иртыша, где встречается как в русловой части, так и в большинстве правобережных притоков (Курчум, Бухтарма, Нарым, Ульба, Уба), а также в р. чёрный Иртыш и впадающей в неё р. Калжыр. В последние десятилетия ареал в пределах республики сократился за счёт левых притоков Иртыша, мелких правых притоков и водохранилищ с их придаточной системой.",
+                population: "Численность. В бассейне Верхнего Иртыша в 1930- 1940 гг. встречался повсеместно. Однако промыслом осваивался лишь в качестве прилова и статистикой почти не учитывался. Отлавливался местным населением для личного потребления. В последнее время численность тайменя быстро сокращается. В браконьерских уловах он представлен единичными экземплярами.",
+                threat: "Основные лимитирующие факторы. Нарушение условий воспроизводства в связи с гидростроительством на реках. Антропогенное воздействие на речные природные комплексы, где обитает таймень, в результате горнорудных работ. Браконьерский вылов",
+                protection: "Принятые меры охраны. Вылов запрещён в связи с занесением в Красные книги Казахстана  и Китая. часть ареала тайменя входит в охраняемые зоны Катон-Карагайского национального парка и Маркакольского государственного заповедника.",
+                fact: "Статус. II категория. Вид, быстро сокращающий свою численность в Казахстане."
+            },
+            "nelma": {
+                title: "Нельма-Stenodus leucichthys nelma",
+                location: "Распространение. Бухтарминское водохранилище, р. чёрный Иртыш ",
+                population: "Численность. В предвоенные годы (1934-1940) в оз. Зайсан добывалось в среднем 17,6 т нельмы в год. В 1950-1954 гг. её среднегодовые уловы возросли почти вдвое (31,2 т), но затем резко упали до 2 т. В последующем ловилась крайне редко. До середины 1980-х годов единично попадалась при подлёдном неводном лове вблизи устья чёрного Иртыша. В настоящее время практически не встречается",
+                threat: "Основные лимитирующие факторы. Нерациональный промысел, перенесённый с 1938 г. из озера Зайсан на миграционные пути нельмы с применением соответствующих орудий лова. Это привело к чрезмерному изъятию половозрелой части стада и, как следствие, к сокращению его воспроизводительной способности и подрыву запасов. Продолжавшийся до 1990-х гг. почти тотальный вылов покатной нельмы за пределами республики ",
+                protection: "Принятые меры охраны. Вылов в республике запрещён с 1957 г. Внесена в Красные книги Казахстана  и Китая ",
+                fact: "Статус. I категория. Исчезающая или уже исчезнувшая популяция. Достоверных сведений о её встречаемости нет более 15 лет."
+            }
+        };
+
+        const data = info[id];
+
+        document.getElementById("modal-title").innerText = data.title;
+        document.getElementById("modal-location").innerText = data.location;
+        document.getElementById("modal-population").innerText = data.population;
+        document.getElementById("modal-threat").innerText = data.threat;
+        document.getElementById("modal-protection").innerText = data.protection;
+        document.getElementById("modal-fact").innerText = data.fact;
+
+        document.getElementById("modal-container").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("modal-container").style.display = "none";
+    }
+</script>
+<div class="footer">
+    <p>Автор: ученица "8Б"класса "Средней школы №17 имени М. Ауэзова"  Гурина Дарья</p>
+    <p>Руководитель: Учитель физики и информатики "Средней школы №17 имени М. Ауэзова"  Октябрь Акиык</p>
+	 <p style="font-size: 16px; line-height: 1.6; margin-top: 20px;">
+      Сайт создан в рамках проектной работы <em>«Электронная Красная книга Восточного Казахстана»</em>.<br>
+Информация, представленная на сайте, основана на издании: Красная книга Республики Казахстан. Издание 4-е, 
+переработанное и дополненное. Том I: Животные; часть 1: Позвоночные / Коллектив авторов — Алматы: «DPS», 2010. — 324 с. ISBN 9965-32-738-6.<br>
+Если у вас есть предложения, замечания или вы не согласны с определённой информацией на сайте — пожалуйста, свяжитесь с нами по электронной почте или телефону, указанному ниже:
+    </p>
+    <div style="margin-top: 20px;">
+      <a href="mailto:oktyabrkyzy@gmail.com" style="display: inline-flex; align-items: center; 
+         text-decoration: none; color: #333; margin-right: 15px; font-size: 16px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbMHaGbdFSQcBFdPQwWWe6dBG7i-wFIYJQ2w&s"
+             alt="Email icon" style="width:24px; height:24px; margin-right: 8px;">
+        oktyabrkyzy@gmail.com
+      </a>
+	<a href="https://web.whatsapp.com/send?phone=87717052125" style="display: inline-flex; align-items: center;
+         text-decoration: none; color: #333; font-size: 16px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHq-vaUK8MlOy8sPlCE5cHlSF9w7jUJ6YDQ&s" 
+             alt="WhatsApp icon" style="width:24px; height:24px; margin-right: 8px;">
+        87711052125
+      </a>
+    </div>
+</body>
+</html>
